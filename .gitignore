@@ -1,0 +1,18 @@
+# Git excludes for project
+
+# Ignore special local dirs
+.DS_Store
+.git
+.vscode
+Testing
+
+# Ignore extra CMake files
+bin
+CMakeFiles
+CMakeCache.txt
+Makefile
+
+# Ignore binaries
+*.cmake
+*.a
+*.o
