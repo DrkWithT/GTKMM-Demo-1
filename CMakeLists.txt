@@ -22,6 +22,6 @@ if (GTK2_FOUND)
     include_directories("${CMAKE_HOME_DIRECTORY}/include" "${GTK2_INCLUDE_DIRS}")
 endif()
 
-# enable_testing()
+enable_testing()
 add_subdirectory(src)
-# add_subdirectory(tests)
+add_subdirectory(tests)
