@@ -18,6 +18,7 @@ namespace mynotehub::datatypes
         Bookshelf();
         Bookshelf(const std::string& owner_str);
 
+        size_t getBookCount() const;
         const std::string& getOwnerName() const;
 
         const std::vector<Notebook>& getAllBooks() const;

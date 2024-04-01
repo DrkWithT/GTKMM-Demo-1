@@ -33,16 +33,14 @@ namespace mynotehub::datatypes
         return index;
     }
 
-    /// TODO: Implement notebook class...
-
     Notebook::Notebook()
-    : title {placeholder_title}, pages {}, subject {SubjectType::unknown} {}
+    : pages {}, title {placeholder_title}, subject {SubjectType::unknown} {}
 
     Notebook::Notebook(const std::string& title_str)
-    : title {title_str}, pages {}, subject {SubjectType::unknown} {}
+    : pages {}, title {title_str}, subject {SubjectType::unknown} {}
 
     Notebook::Notebook(const std::string& title_str, SubjectType subject_code)
-    : title {title_str}, pages {}, subject {subject_code} {}
+    : pages {}, title {title_str}, subject {subject_code} {}
 
     size_t Notebook::getPageCount() const
     {
@@ -52,6 +50,11 @@ namespace mynotehub::datatypes
     const std::string& Notebook::getTitle() const
     {
         return title;
+    }
+
+    SubjectType Notebook::getSubject() const
+    {
+        return subject;
     }
 
     const NotePage& Notebook::getPage(size_t index) const
@@ -66,13 +69,18 @@ namespace mynotehub::datatypes
 
     [[nodiscard]] bool Notebook::removePage(int index)
     {
-        if (index >= getPageCount())
+        auto page_location = pages.begin();
+
+        while (page_location != pages.end())
         {
-            return false;
+            if (page_location->getIndex() == index)
+            {
+                pages.erase(page_location);
+                return true;
+            }
         }
 
-        pages.erase(pages.begin() + index);
-        return true;
+        return false;
     }
 
     void Notebook::clearPages()

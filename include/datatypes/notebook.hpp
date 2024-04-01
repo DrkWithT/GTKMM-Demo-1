@@ -45,6 +45,7 @@ namespace mynotehub::datatypes
 
         size_t getPageCount() const;
         const std::string& getTitle() const;
+        SubjectType getSubject() const;
 
         const NotePage& getPage(size_t index) const;
         void appendPage(const NotePage& page);

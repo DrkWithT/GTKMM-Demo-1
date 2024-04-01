@@ -22,6 +22,11 @@ namespace mynotehub::datatypes
     Bookshelf::Bookshelf(const std::string& owner_str)
     : titles {}, books {}, owner {owner_str} {}
 
+    size_t Bookshelf::getBookCount() const
+    {
+        return books.size();
+    }
+
     const std::string& Bookshelf::getOwnerName() const
     {
         return owner;
@@ -37,9 +42,7 @@ namespace mynotehub::datatypes
         for (const auto& book : books)
         {
             if (book.getTitle() == title)
-            {
                 return book;
-            }
         }
 
         throw std::invalid_argument {"Bookshelf::getNotebook() Title not found."};
@@ -48,9 +51,7 @@ namespace mynotehub::datatypes
     [[nodiscard]] bool Bookshelf::appendNotebook(Notebook book)
     {
         if (titles.find(book.getTitle()) != titles.end())
-        {
             return false;
-        }
 
         titles.insert(book.getTitle());
         books.emplace_back(std::move(book));
@@ -63,9 +64,7 @@ namespace mynotehub::datatypes
         auto title_location = titles.find(title);
 
         if (title_location == titles.end())
-        {
             return false;
-        }
 
         auto book_location = books.begin();
 
