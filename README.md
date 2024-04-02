@@ -16,8 +16,8 @@ This is a repo containing a minimal GTKmm 2.4 demo application. However, I may a
  5. Run the build command for your native build system `make`, `ninja`, etc.
  6. Run the program at `./bin/demoapp`.
 
-### Features
- 1. Allows editing a "page" of plain notes.
- 2. Allows picking, searching, deleting notebooks.
- 3. Can save drafts of pages?
- 4. Basic input validation?
+### WIP Features
+ 1. Allows browsing, adding, and deleting "pages" of plain notes
+ 2. Allows viewing, adding, and deleting notebooks
+ 3. Supports saving notes in a custom format.
+ 4. Can save drafts of pages?
