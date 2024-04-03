@@ -115,7 +115,7 @@ namespace mynotehub::utils
         temp_book_subject = subject_code;
         temp_book_page_count = page_count;
 
-        temp_book = MyBook(temp_book_title);
+        temp_book = MyBook(temp_book_title, static_cast<MySubject>(temp_book_subject));
 
         return MyLMState::book_page;
     }
