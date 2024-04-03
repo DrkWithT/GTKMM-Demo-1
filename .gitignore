@@ -5,6 +5,7 @@
 .git
 .vscode
 Testing
+testsaves
 
 # Ignore extra CMake files
 bin
