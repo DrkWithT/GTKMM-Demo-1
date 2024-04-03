@@ -43,6 +43,7 @@ namespace mynotehub::datatypes
         Notebook(const std::string& title_str);
         Notebook(const std::string& title_str, SubjectType subject_code);
 
+        const std::vector<NotePage>& getAllPages() const;
         size_t getPageCount() const;
         const std::string& getTitle() const;
         SubjectType getSubject() const;
